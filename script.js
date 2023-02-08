@@ -201,8 +201,8 @@ const updateUI = function (acc) {
 // TIMER
 const startLogOutTimer = function () {
   const tick = function () {
-    const min = String(Math.trunc(time / 6000)).padStart(2, 0);
-    const sec = String(time % 6000).padStart(2, 0);
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
     labelTimer.textContent = `${min}:${sec}`;
 
     // When 0 seconds, stop timer and log out user
@@ -216,7 +216,7 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 5 minutes
-  let time = 300000;
+  let time = 180;
 
   // Call the timer every second
   tick();
